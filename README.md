@@ -18,13 +18,36 @@
 
 计算拼音使用了[pypinyin](https://github.com/mozillazg/python-pinyin)。
 
-成语库来自[中华新华字典数据库](https://github.com/pwxcoo/chinese-xinhua)。如果数据库进行了更新，可以将新的idiom.json拷贝替换掉项目根目录中的文件。
+成语库来自[中华新华字典数据库](https://github.com/pwxcoo/chinese-xinhua)。如果数据库进行了更新，可以将新的`idiom.json`拷贝替换掉项目根目录中的文件。
 
 ## 使用方法
 
+1.在项目根目录执行安装依赖
 
+```shell
+pip install -r requirements.txt
+```
+
+2.修改main.py文件中定义的全局变量
+
+3.在项目根目录执行，输出结果默认保存为out.txt
+
+```shell
+python main.py
+```
 
 ## 存在的问题
 
-名字中存在多音字的情况下，拼音计算不一定准确。
+名字中存在多音字的情况下，拼音计算不一定准确
 
+名字中多个字出现在成语中时，只会替换第一个出现的字
+
+如果两个人名字中包含相同读音的字，产生的结果可能只会替换掉一个字
+
+## 可能的改进
+
+支持命令行交互
+
+支持输入拼音和声调
+
+支持拼音的模糊匹配，例如`z`和`zh`
